@@ -1,3 +1,5 @@
+//3. Altere o arquivo "Apps.js" e adicione um novo Route, com o valor path="/". Assegure-se de que esse novo Route seja POSICIONADO ANTES de todos os outros. Faça com que o componente Startpage seja carregado pelo novo Route. Dessa forma, o componente será exibido logo no início.
+import Startpage from './routed/Startpage';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import AppHeader from './ui/AppHeader'
@@ -49,6 +51,10 @@ function App() {
                :id é um PARÂMETRO da rota, que será substituído pelo id real do cliente. */}
               <Route path="/clientes/:id">
                 <ClientesForm />
+              </Route>
+
+              <Route path="/" exact>
+                <Startpage />
               </Route>
 
             </Switch>
